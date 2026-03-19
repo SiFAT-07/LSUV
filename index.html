@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Los Santos Used Vehicles</title>
+  <title>Los Santos Used Vehicles | Service Team</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
@@ -13,153 +13,144 @@
   <header class="site-header" id="home">
     <nav class="navbar container">
       <a href="#home" class="brand">Los Santos Used Vehicles</a>
-      <button class="nav-toggle" aria-label="Toggle Navigation" id="navToggle">Menu</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">Menu</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#listings">Cars</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a href="#contact" class="btn btn-secondary nav-cta">Request a Service</a>
     </nav>
-
-    <section class="hero container fade-in-up">
-      <p class="kicker">Premium Pre-Owned Selection</p>
-      <h1>Drive Your Dream Today</h1>
-      <p class="hero-text">
-        Welcome to Los Santos Used Vehicles, where quality rides meet fair pricing.
-        We help drivers find dependable cars and provide smooth transfer support from
-        start to finish.
-      </p>
-      <a href="#listings" class="btn btn-primary">View Listings</a>
-    </section>
   </header>
 
   <main>
-    <section class="features container" id="features">
-      <h2 class="section-title">Why Choose Us</h2>
-      <div class="feature-grid">
-        <article class="feature-card fade-in-up">
-          <h3>Quality Cars</h3>
-          <p>Every vehicle is selected for condition, reliability, and long-term value.</p>
+    <section class="hero container">
+      <p class="kicker">Reliable Service Crew</p>
+      <h1>Fast Support. Smooth Transfers. Trusted Results.</h1>
+      <p class="hero-text">
+        We help clients with vehicle consultation, service coordination, and transfer requests.
+        Tell us what you need, and our team will get back quickly.
+      </p>
+      <a href="#contact" class="btn btn-primary">Message Request Team</a>
+    </section>
+
+    <section class="team container" id="team">
+      <h2 class="section-title">Our Team</h2>
+      <div class="team-grid">
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Michael Torres" />
+          <h3>Michael Torres</h3>
+          <p class="role">Operations Lead</p>
+          <p>Coordinates client requests and ensures every service timeline is handled properly.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Michael on LinkedIn" class="icon-link">in</a>
+            <a href="#" aria-label="Michael on X" class="icon-link">x</a>
+            <a href="#" aria-label="Email Michael" class="icon-link">@</a>
+          </div>
         </article>
-        <article class="feature-card fade-in-up">
-          <h3>Best Deals</h3>
-          <p>Competitive pricing on top models so you get more for your budget.</p>
+
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Sofia Rivera" />
+          <h3>Sofia Rivera</h3>
+          <p class="role">Client Advisor</p>
+          <p>Guides clients through request intake, required details, and service follow-ups.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Sofia on LinkedIn" class="icon-link">in</a>
+            <a href="#" aria-label="Sofia on X" class="icon-link">x</a>
+            <a href="#" aria-label="Email Sofia" class="icon-link">@</a>
+          </div>
         </article>
-        <article class="feature-card fade-in-up">
-          <h3>Trusted Service</h3>
-          <p>Friendly support with clear details and no hidden surprises.</p>
+
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Daniel Chen" />
+          <h3>Daniel Chen</h3>
+          <p class="role">Transfer Specialist</p>
+          <p>Handles document checks and transfer workflow to keep every process accurate.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Daniel on LinkedIn" class="icon-link">in</a>
+            <a href="#" aria-label="Daniel on X" class="icon-link">x</a>
+            <a href="#" aria-label="Email Daniel" class="icon-link">@</a>
+          </div>
         </article>
-        <article class="feature-card fade-in-up">
-          <h3>Car Transfer</h3>
-          <p>Fast transfer request handling to make ownership changes easy.</p>
+
+        <article class="team-card">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Nadia Brooks" />
+          <h3>Nadia Brooks</h3>
+          <p class="role">Service Manager</p>
+          <p>Oversees quality control and keeps communication clear between team and clients.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Nadia on LinkedIn" class="icon-link">in</a>
+            <a href="#" aria-label="Nadia on X" class="icon-link">x</a>
+            <a href="#" aria-label="Email Nadia" class="icon-link">@</a>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="listings container" id="listings">
-      <div class="section-head">
-        <h2 class="section-title">Available Vehicles</h2>
-        <button class="btn btn-secondary" id="openAdminBtn" aria-expanded="false">Admin Panel</button>
+    <section class="gallery container" id="gallery">
+      <h2 class="section-title">Work Gallery</h2>
+      <div class="gallery-grid" id="galleryGrid">
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=900&q=80" alt="Showroom lineup" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=80" alt="Vehicle delivery moment" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80" alt="Detailed vehicle exterior" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Client pickup event" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80" alt="Sports model preparation" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80" alt="Team inspection" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&w=900&q=80" alt="Service bay workflow" /></button>
+        <button class="gallery-item" type="button"><img src="https://images.unsplash.com/photo-1549399542-7e82138f1b4f?auto=format&fit=crop&w=900&q=80" alt="Evening showroom view" /></button>
       </div>
-      <p class="sync-note" id="dataModeNote">Data Mode: Local (single browser)</p>
-      <div class="filter-bar" aria-label="Car Filters">
-        <label>
-          Search by car name
-          <input type="search" id="searchName" placeholder="Search car name" />
-        </label>
-        <label>
-          Min Price
-          <input type="number" id="minPrice" min="0" step="100" placeholder="10000" />
-        </label>
-        <label>
-          Max Price
-          <input type="number" id="maxPrice" min="0" step="100" placeholder="30000" />
-        </label>
-      </div>
-      <div class="car-grid" id="carGrid"></div>
     </section>
 
-    <section class="admin-panel container" id="adminPanel" aria-hidden="true">
-      <h2 class="section-title">Admin Panel</h2>
-      <p class="admin-note" id="adminStorageNote">Storage mode: local browser data.</p>
-      <form id="addCarForm" class="admin-form">
+    <section class="contact container" id="contact">
+      <h2 class="section-title">Ask for a Request</h2>
+      <p class="contact-note">Send your requirements and our team will respond with next steps.</p>
+      <form id="requestForm" class="request-form">
         <label>
-          Image URL
-          <input type="url" id="carImage" placeholder="https://example.com/car.jpg" required />
+          Name
+          <input type="text" id="name" required />
         </label>
         <label>
-          Car Name
-          <input type="text" id="carName" placeholder="Obey Tailgater S" required />
+          Email or Phone
+          <input type="text" id="contactInfo" required />
         </label>
         <label>
-          Price
-          <input type="text" id="carPrice" placeholder="$18,900" required />
-        </label>
-        <label>
-          Description
-          <textarea id="carDescription" rows="3" placeholder="Low mileage, fully serviced, clean interior." required></textarea>
-        </label>
-        <label>
-          Discord Webhook URL
-          <input type="url" id="webhookUrl" placeholder="https://discord.com/api/webhooks/..." />
-        </label>
-        <div class="admin-actions">
-          <button type="submit" class="btn btn-primary">Add Car</button>
-          <button type="button" class="btn btn-ghost" id="closeAdminBtn">Close Admin</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <div class="modal" id="transferModal" aria-hidden="true" role="dialog" aria-labelledby="transferTitle">
-    <div class="modal-panel">
-      <button class="modal-close" id="closeModalBtn" aria-label="Close Transfer Form">X</button>
-      <h3 id="transferTitle">Request Car Transfer</h3>
-      <form id="transferForm" class="transfer-form">
-        <label>
-          Full Name
-          <input type="text" id="fullName" required />
-        </label>
-        <label>
-          Contact Number
-          <input type="tel" id="contactNumber" required />
-        </label>
-        <label>
-          Car Name
-          <input type="text" id="selectedCar" readonly required />
+          Subject
+          <input type="text" id="subject" required />
         </label>
         <label>
           Message
-          <textarea id="requestMessage" rows="4" placeholder="Please share available transfer slots." required></textarea>
+          <textarea id="message" rows="5" required></textarea>
         </label>
         <button type="submit" class="btn btn-primary">Send Request</button>
       </form>
       <p id="formStatus" class="form-status" aria-live="polite"></p>
-    </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close Image">X</button>
+    <img id="lightboxImage" src="" alt="Expanded gallery image" />
   </div>
 
-  <div class="modal" id="pinModal" aria-hidden="true" role="dialog" aria-labelledby="pinTitle">
-    <div class="modal-panel modal-panel-sm">
-      <button class="modal-close" id="closePinModalBtn" aria-label="Close Admin PIN Modal">X</button>
-      <h3 id="pinTitle">Admin Access</h3>
-      <form id="pinForm" class="transfer-form">
-        <label>
-          Enter Admin PIN
-          <input type="password" id="adminPin" inputmode="numeric" autocomplete="off" required />
-        </label>
-        <button type="submit" class="btn btn-primary">Unlock Admin</button>
-      </form>
-      <p id="pinStatus" class="form-status" aria-live="polite"></p>
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div>
+        <h3>Los Santos Used Vehicles</h3>
+        <p>Trusted support for service coordination and transfer requests.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#home">Home</a> | <a href="#gallery">Gallery</a> | <a href="#team">Team</a> | <a href="#contact">Contact</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Los Santos, San Andreas</p>
+        <p>+1 (555) 010-2211</p>
+        <p>support@lsuv.example</p>
+      </div>
     </div>
-  </div>
-
-  <footer class="site-footer" id="contact">
-    <div class="container footer-content">
-      <p>Los Santos Used Vehicles</p>
-      <p>Phone: +1 (555) 123-9080</p>
-      <p>Email: contact@lsuv.example</p>
-    </div>
+    <p class="copyright">Copyright 2026 Los Santos Used Vehicles. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
