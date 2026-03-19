@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los Santos Used Vehicles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="home">
+    <nav class="navbar container">
+      <a href="#home" class="brand">Los Santos Used Vehicles</a>
+      <button class="nav-toggle" aria-label="Toggle Navigation" id="navToggle">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#listings">Cars</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero container fade-in-up">
+      <p class="kicker">Premium Pre-Owned Selection</p>
+      <h1>Drive Your Dream Today</h1>
+      <p class="hero-text">
+        Welcome to Los Santos Used Vehicles, where quality rides meet fair pricing.
+        We help drivers find dependable cars and provide smooth transfer support from
+        start to finish.
+      </p>
+      <a href="#listings" class="btn btn-primary">View Listings</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="features container" id="features">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="feature-grid">
+        <article class="feature-card fade-in-up">
+          <h3>Quality Cars</h3>
+          <p>Every vehicle is selected for condition, reliability, and long-term value.</p>
+        </article>
+        <article class="feature-card fade-in-up">
+          <h3>Best Deals</h3>
+          <p>Competitive pricing on top models so you get more for your budget.</p>
+        </article>
+        <article class="feature-card fade-in-up">
+          <h3>Trusted Service</h3>
+          <p>Friendly support with clear details and no hidden surprises.</p>
+        </article>
+        <article class="feature-card fade-in-up">
+          <h3>Car Transfer</h3>
+          <p>Fast transfer request handling to make ownership changes easy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="listings container" id="listings">
+      <div class="section-head">
+        <h2 class="section-title">Available Vehicles</h2>
+        <button class="btn btn-secondary" id="openAdminBtn" aria-expanded="false">Admin Panel</button>
+      </div>
+      <p class="sync-note" id="dataModeNote">Data Mode: Local (single browser)</p>
+      <div class="filter-bar" aria-label="Car Filters">
+        <label>
+          Search by car name
+          <input type="search" id="searchName" placeholder="Search car name" />
+        </label>
+        <label>
+          Min Price
+          <input type="number" id="minPrice" min="0" step="100" placeholder="10000" />
+        </label>
+        <label>
+          Max Price
+          <input type="number" id="maxPrice" min="0" step="100" placeholder="30000" />
+        </label>
+      </div>
+      <div class="car-grid" id="carGrid"></div>
+    </section>
+
+    <section class="admin-panel container" id="adminPanel" aria-hidden="true">
+      <h2 class="section-title">Admin Panel</h2>
+      <p class="admin-note" id="adminStorageNote">Storage mode: local browser data.</p>
+      <form id="addCarForm" class="admin-form">
+        <label>
+          Image URL
+          <input type="url" id="carImage" placeholder="https://example.com/car.jpg" required />
+        </label>
+        <label>
+          Car Name
+          <input type="text" id="carName" placeholder="Obey Tailgater S" required />
+        </label>
+        <label>
+          Price
+          <input type="text" id="carPrice" placeholder="$18,900" required />
+        </label>
+        <label>
+          Description
+          <textarea id="carDescription" rows="3" placeholder="Low mileage, fully serviced, clean interior." required></textarea>
+        </label>
+        <label>
+          Discord Webhook URL
+          <input type="url" id="webhookUrl" placeholder="https://discord.com/api/webhooks/..." />
+        </label>
+        <div class="admin-actions">
+          <button type="submit" class="btn btn-primary">Add Car</button>
+          <button type="button" class="btn btn-ghost" id="closeAdminBtn">Close Admin</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal" id="transferModal" aria-hidden="true" role="dialog" aria-labelledby="transferTitle">
+    <div class="modal-panel">
+      <button class="modal-close" id="closeModalBtn" aria-label="Close Transfer Form">X</button>
+      <h3 id="transferTitle">Request Car Transfer</h3>
+      <form id="transferForm" class="transfer-form">
+        <label>
+          Full Name
+          <input type="text" id="fullName" required />
+        </label>
+        <label>
+          Contact Number
+          <input type="tel" id="contactNumber" required />
+        </label>
+        <label>
+          Car Name
+          <input type="text" id="selectedCar" readonly required />
+        </label>
+        <label>
+          Message
+          <textarea id="requestMessage" rows="4" placeholder="Please share available transfer slots." required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send Request</button>
+      </form>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="modal" id="pinModal" aria-hidden="true" role="dialog" aria-labelledby="pinTitle">
+    <div class="modal-panel modal-panel-sm">
+      <button class="modal-close" id="closePinModalBtn" aria-label="Close Admin PIN Modal">X</button>
+      <h3 id="pinTitle">Admin Access</h3>
+      <form id="pinForm" class="transfer-form">
+        <label>
+          Enter Admin PIN
+          <input type="password" id="adminPin" inputmode="numeric" autocomplete="off" required />
+        </label>
+        <button type="submit" class="btn btn-primary">Unlock Admin</button>
+      </form>
+      <p id="pinStatus" class="form-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-content">
+      <p>Los Santos Used Vehicles</p>
+      <p>Phone: +1 (555) 123-9080</p>
+      <p>Email: contact@lsuv.example</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
