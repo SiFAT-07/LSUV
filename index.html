@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-car bg-car-1" id="bgCarOne"></div>
+    <div class="bg-car bg-car-2" id="bgCarTwo"></div>
+  </div>
+
   <header class="site-header" id="home">
     <nav class="navbar container">
       <a href="#home" class="brand">Los Santos Used Vehicles</a>
@@ -44,9 +49,7 @@
           <p class="role">Operations Lead</p>
           <p>Coordinates client requests and ensures every service timeline is handled properly.</p>
           <div class="social-row">
-            <a href="#" aria-label="Michael on LinkedIn" class="icon-link">in</a>
-            <a href="#" aria-label="Michael on X" class="icon-link">x</a>
-            <a href="#" aria-label="Email Michael" class="icon-link">@</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Michael on Discord" class="icon-link">Discord</a>
           </div>
         </article>
 
@@ -56,9 +59,7 @@
           <p class="role">Client Advisor</p>
           <p>Guides clients through request intake, required details, and service follow-ups.</p>
           <div class="social-row">
-            <a href="#" aria-label="Sofia on LinkedIn" class="icon-link">in</a>
-            <a href="#" aria-label="Sofia on X" class="icon-link">x</a>
-            <a href="#" aria-label="Email Sofia" class="icon-link">@</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Sofia on Discord" class="icon-link">Discord</a>
           </div>
         </article>
 
@@ -68,9 +69,7 @@
           <p class="role">Transfer Specialist</p>
           <p>Handles document checks and transfer workflow to keep every process accurate.</p>
           <div class="social-row">
-            <a href="#" aria-label="Daniel on LinkedIn" class="icon-link">in</a>
-            <a href="#" aria-label="Daniel on X" class="icon-link">x</a>
-            <a href="#" aria-label="Email Daniel" class="icon-link">@</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Daniel on Discord" class="icon-link">Discord</a>
           </div>
         </article>
 
@@ -80,9 +79,7 @@
           <p class="role">Service Manager</p>
           <p>Oversees quality control and keeps communication clear between team and clients.</p>
           <div class="social-row">
-            <a href="#" aria-label="Nadia on LinkedIn" class="icon-link">in</a>
-            <a href="#" aria-label="Nadia on X" class="icon-link">x</a>
-            <a href="#" aria-label="Email Nadia" class="icon-link">@</a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Nadia on Discord" class="icon-link">Discord</a>
           </div>
         </article>
       </div>
@@ -111,12 +108,18 @@
           <input type="text" id="name" required />
         </label>
         <label>
-          Email or Phone
-          <input type="text" id="contactInfo" required />
+          CID
+          <input type="text" id="cid" required />
         </label>
         <label>
           Subject
-          <input type="text" id="subject" required />
+          <select id="subject" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Car Transfer">Car Transfer</option>
+            <option value="Car Sell">Car Sell</option>
+            <option value="Car Buy">Car Buy</option>
+            <option value="Other">Other</option>
+          </select>
         </label>
         <label>
           Message

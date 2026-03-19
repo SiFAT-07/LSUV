@@ -9,6 +9,8 @@ const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 const requestForm = document.getElementById("requestForm");
 const formStatus = document.getElementById("formStatus");
+const bgCarOne = document.getElementById("bgCarOne");
+const bgCarTwo = document.getElementById("bgCarTwo");
 
 navToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -56,7 +58,7 @@ async function sendDiscordRequest(payload) {
   const content = [
     "New Service Request:",
     `Name: ${payload.name}`,
-    `Contact: ${payload.contact}`,
+    `CID: ${payload.cid}`,
     `Subject: ${payload.subject}`,
     `Message: ${payload.message}`,
   ].join("\n");
@@ -80,7 +82,7 @@ requestForm.addEventListener("submit", async (event) => {
 
   const payload = {
     name: document.getElementById("name").value.trim(),
-    contact: document.getElementById("contactInfo").value.trim(),
+    cid: document.getElementById("cid").value.trim(),
     subject: document.getElementById("subject").value.trim(),
     message: document.getElementById("message").value.trim(),
   };
@@ -94,3 +96,18 @@ requestForm.addEventListener("submit", async (event) => {
     formStatus.textContent = error.message;
   }
 });
+
+function moveBackgroundCars() {
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  if (bgCarOne) {
+    bgCarOne.style.transform = `translateY(${scrollY * 0.12}px) rotate(-11deg)`;
+  }
+
+  if (bgCarTwo) {
+    bgCarTwo.style.transform = `translateY(${scrollY * -0.09}px) rotate(10deg)`;
+  }
+}
+
+window.addEventListener("scroll", moveBackgroundCars, { passive: true });
+moveBackgroundCars();

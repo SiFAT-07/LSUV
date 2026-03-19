@@ -4,9 +4,10 @@
   --panel-soft: #1e1e1e;
   --text: #f2f2f2;
   --muted: #bbbbbb;
-  --accent: #f5a300;
+  --accent: #f6bf00;
   --accent-strong: #ff7a00;
-  --line: rgba(255, 163, 0, 0.28);
+  --accent-blue: #2390ff;
+  --line: rgba(35, 144, 255, 0.32);
   --shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
 }
 
@@ -23,13 +24,51 @@ body {
   font-family: "Barlow", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 0% 0%, rgba(245, 163, 0, 0.15), transparent 36%),
+    radial-gradient(circle at 0% 0%, rgba(246, 191, 0, 0.18), transparent 36%),
     radial-gradient(
       circle at 100% 0%,
-      rgba(255, 122, 0, 0.12),
+      rgba(35, 144, 255, 0.16),
       transparent 30%
     ),
     linear-gradient(180deg, #050505, #101010 48%, #060606);
+}
+
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-car {
+  position: absolute;
+  width: min(540px, 58vw);
+  height: min(340px, 40vw);
+  opacity: 0.14;
+  filter: saturate(1.1) contrast(1.05);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem;
+}
+
+.bg-car-1 {
+  top: 9%;
+  right: -8%;
+  transform: rotate(-11deg);
+  background-image:
+    linear-gradient(135deg, rgba(246, 191, 0, 0.22), rgba(35, 144, 255, 0.14)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80");
+}
+
+.bg-car-2 {
+  bottom: 8%;
+  left: -9%;
+  transform: rotate(10deg);
+  background-image:
+    linear-gradient(135deg, rgba(255, 122, 0, 0.2), rgba(35, 144, 255, 0.16)),
+    url("https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=1400&q=80");
 }
 
 img {
@@ -84,7 +123,7 @@ img {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--accent);
+  color: var(--accent-blue);
 }
 
 .nav-cta {
@@ -107,7 +146,7 @@ img {
 .kicker {
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--accent);
+  color: var(--accent-blue);
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
 }
@@ -159,7 +198,7 @@ h1 {
 
 .team-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 163, 0, 0.58);
+  border-color: rgba(35, 144, 255, 0.58);
 }
 
 .team-card img {
@@ -167,7 +206,7 @@ h1 {
   height: 88px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 163, 0, 0.5);
+  border: 2px solid rgba(35, 144, 255, 0.58);
   margin-bottom: 0.75rem;
 }
 
@@ -176,7 +215,7 @@ h1 {
 }
 
 .role {
-  color: var(--accent);
+  color: var(--accent-blue);
   margin: 0.2rem 0 0.55rem;
   font-weight: 600;
 }
@@ -191,16 +230,21 @@ h1 {
 }
 
 .icon-link {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #171717;
   text-decoration: none;
   font-weight: 700;
-  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  font-size: 0.88rem;
+  padding: 0.42rem 0.85rem;
+  background: linear-gradient(
+    120deg,
+    var(--accent),
+    var(--accent-strong),
+    var(--accent-blue)
+  );
 }
 
 .gallery-grid {
@@ -248,6 +292,7 @@ h1 {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   background: var(--panel-soft);
@@ -259,8 +304,9 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
-  outline: 2px solid rgba(245, 163, 0, 0.52);
+  outline: 2px solid rgba(35, 144, 255, 0.56);
   outline-offset: 1px;
 }
 
@@ -281,7 +327,12 @@ textarea:focus {
 }
 
 .btn-primary {
-  background: linear-gradient(100deg, var(--accent), var(--accent-strong));
+  background: linear-gradient(
+    100deg,
+    var(--accent),
+    var(--accent-strong),
+    var(--accent-blue)
+  );
   color: #141414;
   text-decoration: none;
   display: inline-block;
@@ -289,7 +340,7 @@ textarea:focus {
 
 .btn-secondary {
   background: transparent;
-  color: var(--accent);
+  color: var(--accent-blue);
   border: 1px solid var(--line);
   text-decoration: none;
 }
@@ -362,7 +413,7 @@ textarea:focus {
 }
 
 .site-footer a:hover {
-  color: var(--accent);
+  color: var(--accent-blue);
 }
 
 .copyright {
@@ -380,6 +431,10 @@ textarea:focus {
 }
 
 @media (max-width: 780px) {
+  .bg-car {
+    opacity: 0.1;
+  }
+
   .nav-toggle {
     display: inline-block;
     margin-left: auto;
