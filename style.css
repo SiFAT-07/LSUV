@@ -130,6 +130,39 @@ img {
   margin-left: 0.5rem;
 }
 
+.discord-top-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--text);
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(35, 144, 255, 0.12);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.discord-top-link:hover,
+.discord-top-link:focus-visible {
+  background: rgba(35, 144, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.discord-top-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.discord-top-link span {
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .nav-toggle {
   display: none;
   border: 1px solid var(--line);
@@ -234,6 +267,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.35rem;
   color: #171717;
   text-decoration: none;
   font-weight: 700;
@@ -245,6 +279,12 @@ h1 {
     var(--accent-strong),
     var(--accent-blue)
   );
+}
+
+.icon-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
 }
 
 .gallery-grid {
